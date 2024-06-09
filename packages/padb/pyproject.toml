@@ -2,7 +2,7 @@
 name = "padb"
 version = "1.2.0"
 description = "padb tools"
-authors = ["electrolyteJ <hawks.jamesf@gmail.com>"]
+authors = ["electrolyteJ <electrolytej@gmail.com>"]
 license = "Apache2"
 readme = "README.md"
 packages = [{ include = "cmds" , from ="src"}]
