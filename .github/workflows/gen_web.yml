@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: cp readme.md
-        run: cp README.md docs/index.md
+        run: cp README.md docs/index.md ; cp packages/fastp/README.md docs/fastp.md ; cp packages/padb/README.md docs/padb.md
       - name: Deploy docs
         uses: mhausenblas/mkdocs-deploy-gh-pages@master
         # Or use mhausenblas/mkdocs-deploy-gh-pages@nomaterial to build without the mkdocs-material theme

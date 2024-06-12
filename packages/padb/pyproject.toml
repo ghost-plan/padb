@@ -5,12 +5,13 @@ description = "padb tools"
 authors = ["electrolyteJ <electrolytej@gmail.com>"]
 license = "Apache2"
 readme = "README.md"
-packages = [{ include = "cmds" , from ="src"}]
+packages = [{ include = "padb", from = "src" }]
 
 
 [tool.poetry.dependencies]
+python = "^3.9"
 requests = "^2.28.2"
-fastp = {path="fastp", develop=true}
+fastp = { path = "../fastp", develop = true }
 
 [tool.poetry.scripts]
-padb = 'cmds:entry'
+padb = 'padb:entry'

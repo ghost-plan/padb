@@ -8,7 +8,7 @@
 ```python
 import fastp,os
 def entry():
-    fastp.load_cmds(os.path.dirname(__file__), 'cmds')
+    fastp.load_cmds(__file__, 'cmds')
 ```
 
 在cmds目录下面编写自己的指令

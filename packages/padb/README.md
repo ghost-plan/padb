@@ -63,7 +63,8 @@ optional arguments:
   -e, --event           event
 ```
 
-![log-info](/art/log-info.png)
+![](/docs/images/log-info.png)
+![](images/log-info.png)
 
 ## Reference:
 

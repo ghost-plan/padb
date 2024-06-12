@@ -74,7 +74,7 @@ class Lazy:
             return value
 
 
-class DeviceCommand(BaseCommand):
+class DeviceCommand(BaseCommand, ABC):
     _serial_no = ''
 
     @Lazy
@@ -120,12 +120,17 @@ class DeviceCommand(BaseCommand):
         self._execute()
 
 
-def all_commands(cmd_dir, pkg):
+def _load_cmds(cmd_dir, pkg):
     all_commands = {}
     for file in os.listdir(cmd_dir):
-        if file == '__init__.py' or file == 'main.py' or not file.endswith('.py'):
-            continue
-        py_filename = file[:-3]
+        if (file == '__init__.py' or file == 'main.py'
+                or file == '__main__.py'
+                or file == '__pycache__'
+        ): continue
+        if not file.endswith('.py'):
+            py_filename = file
+        else:
+            py_filename = file[:-3]
         clsn = py_filename.capitalize()
         while clsn.find('_') > 0:
             h = clsn.index('_')
@@ -135,25 +140,28 @@ def all_commands(cmd_dir, pkg):
             module = import_module('.' + py_filename, pkg)
         except ModuleNotFoundError as e:
             print(pkg + "." + py_filename + " 导入失败")
-            raise e
+            # raise e
+            continue
+        except ImportError as e:
+            continue
         try:
             cmd = getattr(module, clsn)()
         except AttributeError as identifier:
-            pass
-            raise SyntaxError('%s/%s does not define class %s' % (
-                __name__, file, clsn))
+            # raise SyntaxError('%s/%s does not define class %s' % (__name__, file, clsn))
+            # print('%s/%s does not define class %s' % (__name__, file, clsn))
+            continue
         name = py_filename.replace('_', '-')
         cmd.NAME = name
         all_commands[name] = cmd
     return all_commands
 
 
-def load_cmds(cmd_dir, pkg):
+def load_cmds(cmd_init_py, pkg):
     arguments = sys.argv[1:]
     if arguments is None or len(arguments) == 0:
         sys.stdout.write('error: arguments is empty\n')
         return
-    cmds = all_commands(cmd_dir, pkg)
+    cmds = _load_cmds(os.path.dirname(cmd_init_py), pkg)
     p, sps = BaseCommand.create()
     for (subcmd_name, subcmd) in cmds.items():
         sp = subcmd.create_parser(p, sps)

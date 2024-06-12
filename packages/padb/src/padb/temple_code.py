@@ -1,7 +1,7 @@
 from argparse import ArgumentParser
 
 from fastp import BaseCommand
-from cmds.ext.api import request
+from padb.api import request
 
 
 class TempleCode(BaseCommand):

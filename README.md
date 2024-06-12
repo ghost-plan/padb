@@ -15,7 +15,7 @@ Upload Package
 - Activating the virtual environment:poetry shell
 - add deps:poetry add xxx (poetry add `cat requirements.txt`) or poetry install
 - poetry build | pip3 install dist/padb-1.2.0-py3-none-any.whl --force
-- 开发调试：  poetry build | poetry run python src/main.py --help
+- 开发调试：  poetry build | poetry run padb temple-code -c
 - 发布：poetry build  | poetry publish
 
 ## Reference:
