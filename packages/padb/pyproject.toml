@@ -11,7 +11,7 @@ packages = [{ include = "padb", from = "src" }]
 [tool.poetry.dependencies]
 python = "^3.9"
 requests = "^2.28.2"
-fastcli = { path = "../fastcli", develop = true }
+flashcli = { path = "../flashcli", develop = true }
 
 [tool.poetry.scripts]
 padb = 'padb:entry'
