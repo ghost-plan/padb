@@ -1,7 +1,7 @@
 __version__ = '1.0.0'
 
-import fastp
+import fast
 
 
 def entry():
-    fastp.load_cmds(__file__, 'padb')
+    fast.load_cmds(__file__, 'padb')

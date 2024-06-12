@@ -1,4 +1,4 @@
-from fastp import device
+from fast import device
 from subprocess import PIPE, TimeoutExpired
 import subprocess
 import platform

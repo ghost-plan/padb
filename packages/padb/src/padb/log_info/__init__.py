@@ -1,5 +1,5 @@
-from fastp import DeviceCommand
-from fastp import event, log
+from fast import DeviceCommand
+from fast import event, log
 from argparse import ArgumentParser
 
 

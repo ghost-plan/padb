@@ -1,11 +1,11 @@
-from fastp import DeviceCommand
-from fastp.device import (
+from fast import DeviceCommand
+from fast.device import (
     get_model, get_brand, get_name,
     get_wm_size, get_wm_density, get_android_version,
     get_imeis, get_ip_and_mac, get_board,
     get_abilist, get_cpu_core_size, get_heap_size,
 )
-from fastp.log import print_with_bar
+from fast.log import print_with_bar
 
 
 class DeviceInfo(DeviceCommand):

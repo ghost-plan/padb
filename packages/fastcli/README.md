@@ -1,8 +1,8 @@
-[pip install cmd-fastp](https://pypi.org/project/cmd-fastp/#description)
+[pip install fastcli](https://pypi.org/project/fastcli/#description)
 
 ## Framework
 
-轻量级终端指令框架，`pip install cmd-fastp`即可在自己的项目接入。只要创建一个存放命令的文件夹cmds即可。
+轻量级终端指令框架，`pip install fastcli`即可在自己的项目接入。只要创建一个存放命令的文件夹cmds即可。
 
 初始化框架
 ```python

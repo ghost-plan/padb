@@ -1,6 +1,6 @@
 from argparse import ArgumentParser
 
-from fastp import BaseCommand
+from fast import BaseCommand
 from padb.api import request
 
 

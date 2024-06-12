@@ -10,7 +10,7 @@ theme:
 nav:
   - Home: index.md
   - Padb: padb.md
-  - Fastp: fastp.md
+  - Fastp: fastcli.md
 
 markdown_extensions:
   - toc:

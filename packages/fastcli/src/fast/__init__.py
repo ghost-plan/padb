@@ -6,7 +6,7 @@ import os
 from importlib import import_module
 import sys
 from argparse import ArgumentParser
-from fastp import device, log
+from fast import device, log
 from abc import abstractmethod, ABC
 
 
